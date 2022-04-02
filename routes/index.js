@@ -8,7 +8,7 @@ router.get('/', function (req, res, next) {
 /* Страница lelouch */
 router.get('/lelouch', function (req, res, next) {
     res.render('hero.ejs', {
-        title: "Страница lelouch",
+        title: "Страница Lelouch'a",
         picture: "images/lelouch.jpg",
         desc: "ГГ Код Гиас"
     });
@@ -18,13 +18,13 @@ router.get('/cc', function (req, res, next) {
     res.render('hero.ejs', {
         title: "Страница C.C.",
         picture: "images/cc.jpg",
-        desc: "ГГ-ня Код Гиас"
+        desc: "Главная героиня Код Гиас"
     });
 });
 /* Страница zero */
 router.get('/zero', function (req, res, next) {
     res.render('hero.ejs', {
-        title: "Страница zero",
+        title: "Страница Zero",
         picture: "images/zero.jpg",
         desc: "[ДАННЫЕ УДАЛЕНЫ]"
     });
