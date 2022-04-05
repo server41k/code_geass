@@ -1,19 +1,13 @@
 var async = require("async")
-async.parallel([
-    firstWord,
-    secondWord,
-    thirdWord
+async.series([
+    async.apply(anyWord, "МАМА"),
+    async.apply(anyWord, "МЫЛА"),
+    async.apply(anyWord, "РАМУ")
 ],
     function (err, result) {
         if (err) throw err;
         console.log(result.join(' '))
     });
-function firstWord(callback) {
-    callback(null, 'МАМА')
-}
-function secondWord(callback) {
-    callback(null, 'МЫЛА')
-}
-function thirdWord(callback) {
-    callback(null, 'РАМУ')
+function anyWord(arg, callback) {
+    callback(null, arg)
 }
