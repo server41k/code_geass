@@ -1,94 +1,11 @@
-<!DOCTYPE html>
-<html>
+<% layout('layout/page.ejs') %>
 
-<head>
-    <style>
-        a.rmenu {
-            border: 1px solid black;
-            display: flex;
-            flex-flow: row nowrap;
-            margin: 2px 0 0;
-            padding: 0;
-            font-size: 16px;
-            line-height: 18px;
-            list-style: none;
-            display: block;
-            padding: 8px 10px;
-            text-transform: uppercase;
-            letter-spacing: .27em;
-            text-decoration: none;
-        }
-
-        a.rmenu:hover {
-            background-color: rgb(0, 0, 0);
-            color: white;
-        }
-
-        ul.nav {
-            margin-left: 0px;
-            padding-left: 0px;
-            list-style: none;
-        }
-
-        .nav li {
-            display: inline;
-        }
-
-        head {
-            position: fixed;
-            z-index: 1001;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: #fff;
-            box-shadow: 0 5px 46px rgb(0 0 0 / 12%), 0 7px 15px rgb(0 0 0 / 12%);
-            padding: 20px 0;
-            transition: transform .5s ease;
-            transform: translateY(calc(-100% - 46px));
-        }
-
-        ul.nav a {
-            display: inline-block;
-            width: 5em;
-            padding: 10px;
-            background-color: #f4f4f4;
-            border: 1px dashed #333;
-            text-decoration: none;
-            color: #333;
-            text-align: center;
-        }
-
-        ul.nav a:hover {
-            background-color: #333;
-            color: #f4f4f4;
-        }
-    </style>
-    <header>
-        <div class="logo">
-            <a href="/">
-                <img src="<%= geass %>" width="70" />
-            </a>
-        </div>
-        <div class="menu">
-            <ul>
-                <li><a href="/lelouch">Lelouch</a></li>
-                <li><a href="/cc">C.C.</a></li>
-                <li><a href="/zero">Zero</a></li>
-            </ul>
-        </div>
-        <div class="tel"><a class="rmenu" href="/exit">Exit</a>
-        </div>
-    </header>
-    </header>
-    <title>
-    </title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link href="/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css">
-    <script src="/jquery/dist/jquery.js"></script>
-    <script src="/bootstrap/dist/js/bootstrap.js"></script>
-</head>
-
-<body>
-</body>
-
-</html>
+<h1><%= title %></h1>
+<p>Welcome to <%= title %></p>
+<p>Счетчик: <%= counter %></p>
+<% if(user) {%>
+    <h1>Привет <%= user.username %></h1>
+    <%  } else { %>
+    <h1>Зарегистрируйтесь, чтобы видеть все страницы сайта</h1>
+    <% } %>
+    

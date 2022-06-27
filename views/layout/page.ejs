@@ -35,17 +35,18 @@
     <header>
         <div class="logo">
             <a href="/">
-                <img src="<%= geass %>" width="60" height="60px" />
+                <img src=https://i.pinimg.com/originals/6c/4d/8e/6c4d8e0a766cf6296ad032b5cb07ab14.jpg width="70" />
             </a>
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="/lelouch">Lelouch</a></li>
-                <li><a href="/cc">C.C.</a></li>
-                <li><a href="/zero">Zero</a></li>
+                <% menu.forEach(function(hero){ %>
+                    <li><a href="/heroes/<%=hero.nick%>"><%=hero.title%></a></li>
+                    <% }) %>
+                    
             </ul>
         </nav>
-        <div class="tel"><a class="rmenu" href="/exit">Exit</a>
+        <div class="tel"><a class="rmenu" href="/logreg">Вход</a>
         </div>
     </header>
     <title id='img'>
